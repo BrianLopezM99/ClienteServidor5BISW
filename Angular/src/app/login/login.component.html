@@ -1,0 +1,22 @@
+<h1 align=center style="margin: 30px;">Bienvenid@</h1>
+
+<div class="container align-items-center" style="margin-top: 1%;width: 700px;">
+    <h3 align=center>Iniciar sesion</h3>
+    <img src="https://media2.giphy.com/media/WX1Yck3Ov3NRe/source.gif" style="height: 320px; width: 320px; margin-left: 180px;" alt="">
+    <div *ngIf="error" class="mb-3 card text-white card-body bg-danger">
+        <h5 class="text-white card-title">Error</h5>{{error.error.message}}</div>
+    <div class="row justify-content-between">
+        <div class=" text-center col-12 ">
+
+            <form [formGroup]="loginForm">
+                <label for="inputEmail " class="sr-only ">Email address</label>
+                <input formControlName="email" type="email " id="inputEmail " class="form-control " placeholder="Direccion de correo " required=" " autofocus=" ">
+                <label for="inputPassword " class="sr-only ">Password</label>
+                <input formControlName="password" type="password " id="inputPassword " class="form-control " placeholder="Contraseña " required=" ">
+                <button class="btn btn-lg btn-primary btn-block " type="submit " (click)="login()"> Ingresar</button>
+            </form>
+        </div>
+    </div>
+    <button type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#modalRegistro" style="margin:7px;">¿No tienes una cuenta? Registrate</button>
+
+</div>

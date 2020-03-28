@@ -1,0 +1,31 @@
+<h1 align=center>Lista Zombies</h1>
+<button type="button" class="btn mr-2 mb-2 btn-success" data-toggle="modal" data-target="#modal" style="float: right;">
+    Agregar Zombie
+</button>
+<br>
+<div class="card-body">
+    <h5 class="card-title">Pagina Zombies<img src="https://media.contentapi.ea.com/content/dam/eacom/es-es/migrated-images/2016/11/editorial-zombie-hand-xl.png.adapt.crop16x9.320w.png" style="margin-left: 200px;" alt=""></h5>
+    <table class="mb-0 table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let zombie of zombies |async; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{zombie.name}}</td>
+                <td>{{zombie.email}}</td>
+                <td>{{zombie.type}}</td>
+                <td><button type="button " class="btn btn-primary btn-danger" (click)="eliminarZombie(zombie._id)">Borrar</button>
+                    <button type="button" class="btn mr-2 mb-2 btn-primary btn-dark" data-toggle="modal" data-target="#modalActualizarZombie" (click)="actSeleccion(zombie._id)" style="margin:10px;">Actualizar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
